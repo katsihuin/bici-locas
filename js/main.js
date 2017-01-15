@@ -140,10 +140,17 @@ function validateTipoBici()
 function validateTwitter()
 {
 	var twitter = document.getElementById("commentTwitter").value;
-	if (!twitter.match(/^@?(\w){1,15}$/)) 
+	if (twitter.length == 0) 
 	{
+		jsShow("commentTwitterPrompt");
+		producePrompt("Este campo es opcional", "commentTwitterPrompt", "blue");
+		setTimeout(function(){jsHide("commentTwitterPrompt");}, 2000);
+	}
+	else if (!twitter.match(/^(\w){1,15}$/)) 
+	{
+		jsShow("commentTwitterPrompt");
 		producePrompt("Compruebe que el Nombre de Usuario en Twitter no contenga más de 15 caracteres, símbolos, guiones o espacios", "commentTwitterPrompt", "red");
-		return false;
+		setTimeout(function(){jsHide("commentTwitterPrompt");}, 2000);
 	}
 	else 
 	{
@@ -159,7 +166,6 @@ function validateInfo()
 	if (info.checked==true) 
 	{
 		producePrompt("Usted ha seleccionado recibir información via email ✔", "commentInfoPrompt", "green");
-		return true;
+
 	}
-	
 }
