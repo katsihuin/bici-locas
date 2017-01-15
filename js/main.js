@@ -51,3 +51,24 @@ function validateLastName()
 		return true;
 	}	
 }
+
+/* Valida Email*/
+function validateEmail()
+{
+	var email = document.getElementById("commentEmail").value;
+	if (email.length == 0)
+	{
+		producePrompt("Correo Electrónico es requerido", "commentEmailPrompt", "red");
+		return false;
+	}
+	else if (!email.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) 
+	{
+		producePrompt("Compruebe que el Correo Electrónico contenga un formato válido. Ej: name@domain.com", "commentEmailPrompt", "red");
+		return false;
+	}
+	else 
+	{
+		producePrompt("Correo Electrónico Válido ✔", "commentEmailPrompt", "green");
+		return true;
+	}
+}
