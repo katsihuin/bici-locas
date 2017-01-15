@@ -97,3 +97,18 @@ function validatePassword()
 		return true;
 	}
 }
+
+function validateTipoBici()
+{
+	var tipo = document.getElementById("commentTipo").value;
+	if (tipo == 0)
+	{
+		producePrompt("Seleccione un tipo de bici de las opciones presentadas", "commentTipoPrompt", "red");
+		return false;
+	}
+	else 
+	{
+		producePrompt("Bici seleccionada ✔", "commentTipoPrompt", "green");
+		return true;
+	}
+}
