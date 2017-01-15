@@ -1,6 +1,29 @@
 function validateForm()
 {
-	/* Escribe tú código aquí */	
+	/* validar los campos requeridos */
+	if (!validateName() || !validateLastName() || !validateEmail() || !validatePassword() || !validateTipoBici())
+	{
+		jsShow("commentPrompt");
+		producePrompt("Formulario debe estar validado para registrarte", "commentPrompt", "red");
+		setTimeout(function(){jsHide("commentPrompt");}, 2000);
+	}	
+	else
+	{
+		jsShow("commentPrompt");
+		producePrompt("Formulario Validado Exitósamente", "commentPrompt", "green");
+	}
+}
+
+/* Muestra mensaje validación*/
+function jsShow(id)
+{
+	document.getElementById(id).style.display="block";
+}
+
+/* Oculta mensaje validación*/
+function jsHide(id)
+{
+	document.getElementById(id).style.display="none";
 }
 
 /* Envia Mensaje al usuario*/
