@@ -4,7 +4,7 @@ function validateForm()
 	if (!validateName() || !validateLastName() || !validateEmail() || !validatePassword() || !validateTipoBici())
 	{
 		jsShow("commentPrompt");
-		producePrompt("Formulario debe estar validado para registrarte", "commentPrompt", "red");
+		producePrompt("Formulario debe estar validado para poder registrarte", "commentPrompt", "red");
 		setTimeout(function(){jsHide("commentPrompt");}, 2000);
 	}	
 	else
@@ -166,6 +166,6 @@ function validateInfo()
 	if (info.checked==true) 
 	{
 		producePrompt("Usted ha seleccionado recibir información via email ✔", "commentInfoPrompt", "green");
-
+		return true;
 	}
 }
