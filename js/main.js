@@ -112,3 +112,31 @@ function validateTipoBici()
 		return true;
 	}
 }
+
+/* Valida formato de nombre de ususario en Twitter*/
+function validateTwitter()
+{
+	var twitter = document.getElementById("commentTwitter").value;
+	if (!twitter.match(/^@?(\w){1,15}$/)) 
+	{
+		producePrompt("Compruebe que el Nombre de Usuario en Twitter no contenga más de 15 caracteres, símbolos, guiones o espacios", "commentTwitterPrompt", "red");
+		return false;
+	}
+	else 
+	{
+		producePrompt("Nombre de Usuario en Twitter Válido ✔", "commentTwitterPrompt", "green");
+		return true;
+	}
+}
+
+/* Valida Informacion */
+function validateInfo()
+{
+	var info = document.getElementById("commentInfo").value;
+	if (info.checked==true) 
+	{
+		producePrompt("Usted ha seleccionado recibir información via email ✔", "commentInfoPrompt", "green");
+		return true;
+	}
+	
+}
