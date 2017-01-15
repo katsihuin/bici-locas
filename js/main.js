@@ -72,3 +72,28 @@ function validateEmail()
 		return true;
 	}
 }
+
+function validatePassword()
+{
+	var password = document.getElementById("commentPassword").value;
+	if (password.length == 0)
+	{
+		producePrompt("Contraseña es requerida", "commentPasswordPrompt", "red");
+		return false;
+	}
+	else if (!password.match(/.{6,}/)) 
+	{
+		producePrompt("Compruebe que la contraseña tenga al menos 6 caracteres", "commentPasswordPrompt", "red");
+		return false;
+	}
+	else if (password == "password" || password == "123456" || password == "098754") 
+	{
+		producePrompt("La contraseña no puede ser igual a 'password' ó '123456' ó '098754'", "commentPasswordPrompt", "red");
+		return false;
+	}
+	else 
+	{
+		producePrompt("Contraseña Válida ✔", "commentPasswordPrompt", "green");
+		return true;
+	}
+}
