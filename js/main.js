@@ -42,9 +42,9 @@ function validateName()
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
 		return false;
 	}
-	else if (!name.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
+	else if (!name.match(/^[A-Z][a-z]+[a-zA-Z]+[\s]+[A-Z][a-z]+[a-z]$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Nombre sea mayúscula y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Nombre(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -63,9 +63,9 @@ function validateLastName()
 		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
 		return false;
 	}
-	else if (!lastName.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
+	else if (!lastName.match(/^[A-Z][a-z]+[a-zA-Z]+[\s]+[A-Z][a-z]+[a-z]$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Apellido sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Apellido(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -109,7 +109,7 @@ function validatePassword()
 		producePrompt("Compruebe que la contraseña tenga al menos 6 caracteres", "commentPasswordPrompt", "red");
 		return false;
 	}
-	else if (password == "password" || password == "123456" || password == "098754") 
+	else if (password == "password" || password == "PASSWORD" || password == "123456" || password == "098754") 
 	{
 		producePrompt("La contraseña no puede ser igual a 'password' ó '123456' ó '098754'", "commentPasswordPrompt", "red");
 		return false;
@@ -165,7 +165,7 @@ function validateInfo()
 	var info = document.getElementById("commentInfo").value;
 	if (info.checked==true) 
 	{
-		producePrompt("Usted ha seleccionado recibir información via email ✔", "commentInfoPrompt", "green");
+		producePrompt("¡Gracias! Estaremos en contacto muy pronto.", "commentInfoPrompt", "blue");
 		return true;
 	}
 }
