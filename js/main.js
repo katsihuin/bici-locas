@@ -37,14 +37,15 @@ function producePrompt(message, promptLocation, color)
 function validateName()
 {
 	var name =  document.getElementById("commentName").value;
-	if (name.length == 0)
+
+	var nameCaps = name.replace(/(^|\s)[a-z]/g, function(f) {return f.toUpperCase();});
+
+	return nameCaps;
+
+
+	if (nameCaps.length == 0)
 	{
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
-		return false;
-	}
-	else if (!name.match(/^[a-zA-Z\s]*$/)) 
-	{
-		producePrompt("Compruebe que la primera letra de su Nombre(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
