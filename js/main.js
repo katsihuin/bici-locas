@@ -37,14 +37,15 @@ function producePrompt(message, promptLocation, color)
 function validateName()
 {
 	var name =  document.getElementById("commentName").value;
+
 	if (name.length == 0)
 	{
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
 		return false;
 	}
-	else if (!name.match(/^[a-zA-Z\s]*$/)) 
+	else if (!name.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Nombre(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Nombres sea mayúsculas y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -63,7 +64,7 @@ function validateLastName()
 		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
 		return false;
 	}
-	else if (!lastName.match(/^[a-zA-Z\s]*$/)) 
+	else if (!lastName.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
 	{
 		producePrompt("Compruebe que la primera letra de su Apellido(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
 		return false;
@@ -165,7 +166,7 @@ function validateInfo()
 	var info = document.getElementById("commentInfo").value;
 	if (info.checked==true) 
 	{
-		producePrompt("¡Gracias! Estaremos en contacto muy pronto.", "commentInfoPrompt", "blue");
+		producePrompt("¡Gracias! Estaremos en contacto contigo muy pronto.", "commentInfoPrompt", "blue");
 		return true;
 	}
 }
