@@ -64,7 +64,7 @@ function validateLastName()
 		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
 		return false;
 	}
-	else if (!lastName.match(/^[a-zA-Z\s]*$/)) 
+	else if (!lastName.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
 	{
 		producePrompt("Compruebe que la primera letra de su Apellido(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
 		return false;
