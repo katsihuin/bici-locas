@@ -45,7 +45,7 @@ function validateName()
 	}
 	else if (!name.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Nombres sea mayúsculas y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Nombre sea mayúsculas y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -66,7 +66,7 @@ function validateLastName()
 	}
 	else if (!lastName.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Apellido(s) sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Apellido sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -76,7 +76,7 @@ function validateLastName()
 	}	
 }
 
-/* Valida Email*/
+/* Valida Email*/h
 function validateEmail()
 {
 	var email = document.getElementById("commentEmail").value;
