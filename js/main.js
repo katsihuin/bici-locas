@@ -38,14 +38,14 @@ function validateName()
 {
 	var name =  document.getElementById("commentName").value;
 
-	var nameCaps = name.replace(/(^|\s)[a-z]/g, function(f) {return f.toUpperCase();});
-
-	return nameCaps;
-
-
-	if (nameCaps.length == 0)
+	if (name.length == 0)
 	{
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
+		return false;
+	}
+	else if (!name.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
+	{
+		producePrompt("Compruebe que la primera letra de su Nombres sea mayúsculas y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
