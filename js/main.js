@@ -43,9 +43,9 @@ function validateName()
 		producePrompt("Tu Nombre es requerido", "commentNamePrompt", "red");
 		return false;
 	}
-	else if (!name.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
+	else if (!name.match(/^[a-zA-Z\s]*$/)) 
 	{
-		producePrompt("Compruebe que la primera letra de su Nombre sea mayúsculas y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
+		producePrompt("Compruebe que la primera letra de su Nombre sea mayúscula y contenga SOLO caracteres de la A-Z", "commentNamePrompt", "red");
 		return false;
 	}
 	else 
@@ -64,7 +64,7 @@ function validateLastName()
 		producePrompt("Tu Apellido es requerido", "commentLastNamePrompt", "red");
 		return false;
 	}
-	else if (!lastName.match(/^[A-Z][a-z]*[a-zA-Z]$/)) 
+	else if (!lastName.match(/^[a-zA-Z\s]*$/)) 
 	{
 		producePrompt("Compruebe que la primera letra de su Apellido sea mayúscula y contenga SOLO caracteres de la A-Z", "commentLastNamePrompt", "red");
 		return false;
